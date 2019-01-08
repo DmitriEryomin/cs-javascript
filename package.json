@@ -1,0 +1,26 @@
+{
+  "name": "cs-javascript",
+  "version": "1.0.0",
+  "description": "Data types and algorithms implementation with JavaScript",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^23.6.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmitriEryomin/cs-javascript.git"
+  },
+  "author": "dmitri.eryomin@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmitriEryomin/cs-javascript/issues"
+  },
+  "homepage": "https://github.com/DmitriEryomin/cs-javascript#readme"
+}
