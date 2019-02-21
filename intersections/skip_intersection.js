@@ -17,7 +17,8 @@ function skipIntersection(arr_1, arr_2) {
             ind_1++;
             ind_2++;
         } else if (arr_1[ind_1] < arr_2[ind_2]) {
-            if (arr_1[ind_1 + step_1] <= arr_2[ind_2]) {
+            const inRange = (ind_1 + step_1) <= arr_1.length;
+            if (inRange && arr_1[ind_1 + step_1] <= arr_2[ind_2]) {
                 while(arr_1[ind_1 + step_1] <= arr_2[ind_2]) {
                     ind_1 += step_1;
                 }
@@ -28,7 +29,6 @@ function skipIntersection(arr_1, arr_2) {
                     }
                 }
                 ind_1+= step_1;
-                ind_2++;
             } else {
                 ind_1++;
             }
@@ -37,7 +37,6 @@ function skipIntersection(arr_1, arr_2) {
         }
     }
 
-    console.log(ops);
     return intersected_arr;
 }
 
