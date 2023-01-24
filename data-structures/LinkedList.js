@@ -49,6 +49,41 @@ class LinkedList {
     return oldHead;
   }
 
+  insertAfter(nodeData, data) {
+    let currentNode = this.#head;
+    while (currentNode.data !== nodeData) {
+      if (currentNode.next === null) {
+        throw new Error(`node with data ${nodeData} doesn't exist`);
+      }
+      currentNode = currentNode.next;
+    }
+
+    const newNode = new Node(data);
+    newNode.setNextNode(currentNode.next);
+    currentNode.setNextNode(newNode);
+  }
+
+  insertBefore(nodeData, data) {
+    let currentNode = this.#head;
+    const newNode = new Node(data);
+
+    if (currentNode.data === nodeData) {
+      newNode.setNextNode(currentNode);
+      this.#head = newNode;
+      return;
+    }
+
+    while (currentNode.next.data !== nodeData) {
+      if (currentNode.next === null) {
+        throw new Error(`node with data ${nodeData} doesn't exist`);
+      }
+      currentNode = currentNode.next;
+    }
+
+    newNode.setNextNode(currentNode.next);
+    currentNode.setNextNode(newNode);
+  }
+
   print() {
     let currentNode = this.#head;
     let output = '<head> ';
@@ -59,6 +94,7 @@ class LinkedList {
     output += '<tail>';
 
     console.log(output);
+    return output;
   }
 }
 
